@@ -1,0 +1,7 @@
+<root_tag>
+    <table name="table1">
+        <col name="col1" type="string"/>
+        <col name="col2" type="string"/>
+        <col name="col3" type="string"/>
+    </table>
+</root_tag>
