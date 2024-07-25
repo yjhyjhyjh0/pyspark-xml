@@ -17,3 +17,14 @@ Q2-How to avoid generating _SUCCESS file?
 ```  
 spark.conf.set("mapreduce.fileoutputcommitter.marksuccessfuljobs", "false")
 ```
+
+Q3-How to use hdfs api via pyspark?
+```
+uri_class = sc._gateway.jvm.java.net.URI
+path_class = sc._gateway.jvm.org.apache.hadoop.fs.Path
+file_system_class = sc._gateway.jvm.org.apache.hadoop.fs.FileSystem
+config_class = sc._gateway.jvm.org.apache.hadoop.conf.Configuration
+
+fs = file_system_class.get(uri_class(hdfs_path), config_class())
+folder_status = fs.listStatus(path_class(hdfs_path))
+```
